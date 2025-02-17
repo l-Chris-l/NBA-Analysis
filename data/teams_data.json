@@ -1,0 +1,178 @@
+{
+    "teams": [
+        {
+            "name": "76ers",
+            "market": "Philadelphia",
+            "alias": "PHI",
+            "additional_info": {}
+        },
+        {
+            "name": "Bucks",
+            "market": "Milwaukee",
+            "alias": "MIL",
+            "additional_info": {}
+        },
+        {
+            "name": "Bulls",
+            "market": "Chicago",
+            "alias": "CHI",
+            "additional_info": {}
+        },
+        {
+            "name": "Cavaliers",
+            "market": "Cleveland",
+            "alias": "CLE",
+            "additional_info": {}
+        },
+        {
+            "name": "Celtics",
+            "market": "Boston",
+            "alias": "BOS",
+            "additional_info": {}
+        },
+        {
+            "name": "Grizzlies",
+            "market": "Memphis",
+            "alias": "MEM",
+            "additional_info": {}
+        },
+        {
+            "name": "Hawks",
+            "market": "Atlanta",
+            "alias": "ATL",
+            "additional_info": {}
+        },
+        {
+            "name": "Heat",
+            "market": "Miami",
+            "alias": "MIA",
+            "additional_info": {}
+        },
+        {
+            "name": "Hornets",
+            "market": "Charlotte",
+            "alias": "CHA",
+            "additional_info": {}
+        },
+        {
+            "name": "Jazz",
+            "market": "Utah",
+            "alias": "UTA",
+            "additional_info": {}
+        },
+        {
+            "name": "Kings",
+            "market": "Sacramento",
+            "alias": "SAC",
+            "additional_info": {}
+        },
+        {
+            "name": "Knicks",
+            "market": "New York",
+            "alias": "NYK",
+            "additional_info": {}
+        },
+        {
+            "name": "Lakers",
+            "market": "Los Angeles",
+            "alias": "LAL",
+            "additional_info": {}
+        },
+        {
+            "name": "Magic",
+            "market": "Orlando",
+            "alias": "ORL",
+            "additional_info": {}
+        },
+        {
+            "name": "Mavericks",
+            "market": "Dallas",
+            "alias": "DAL",
+            "additional_info": {}
+        },
+        {
+            "name": "Nets",
+            "market": "Brooklyn",
+            "alias": "BKN",
+            "additional_info": {}
+        },
+        {
+            "name": "Nuggets",
+            "market": "Denver",
+            "alias": "DEN",
+            "additional_info": {}
+        },
+        {
+            "name": "Pacers",
+            "market": "Indiana",
+            "alias": "IND",
+            "additional_info": {}
+        },
+        {
+            "name": "Pelicans",
+            "market": "New Orleans",
+            "alias": "NOP",
+            "additional_info": {}
+        },
+        {
+            "name": "Pistons",
+            "market": "Detroit",
+            "alias": "DET",
+            "additional_info": {}
+        },
+        {
+            "name": "Raptors",
+            "market": "Toronto",
+            "alias": "TOR",
+            "additional_info": {}
+        },
+        {
+            "name": "Rockets",
+            "market": "Houston",
+            "alias": "HOU",
+            "additional_info": {}
+        },
+        {
+            "name": "Spurs",
+            "market": "San Antonio",
+            "alias": "SAS",
+            "additional_info": {}
+        },
+        {
+            "name": "Suns",
+            "market": "Phoenix",
+            "alias": "PHX",
+            "additional_info": {}
+        },
+        {
+            "name": "Thunder",
+            "market": "Oklahoma City",
+            "alias": "OKC",
+            "additional_info": {}
+        },
+        {
+            "name": "Timberwolves",
+            "market": "Minnesota",
+            "alias": "MIN",
+            "additional_info": {}
+        },
+        {
+            "name": "Trail Blazers",
+            "market": "Portland",
+            "alias": "POR",
+            "additional_info": {}
+        },
+        {
+            "name": "Warriors",
+            "market": "Golden State",
+            "alias": "GSW",
+            "additional_info": {}
+        },
+        {
+            "name": "Wizards",
+            "market": "Washington",
+            "alias": "WAS",
+            "additional_info": {}
+        }
+    ]
+}

@@ -1,6 +1,7 @@
 import requests
 from dotenv import load_dotenv
 import os
+import json
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -16,8 +17,55 @@ url_teams = f"{BASE_URL}{ENDPOINT_TEAMS}?api_key={API_KEY}"
 # Set the headers for the request
 headers = {"accept": "application/json"}
 
+# Path to the teams data JSON file
+json_file_path = "data/teams_data.json"
+
+# Check if the old JSON file exists and delete it
+if os.path.exists(json_file_path):
+    os.remove(json_file_path)
+    print(f"Old JSON file '{json_file_path}' deleted.")
+
 # Make the GET request for teams
 response_teams = requests.get(url_teams, headers=headers)
 
-# Print the responses
-print("Teams Response:", response_teams.text)
+# Check if the response was successful
+if response_teams.status_code == 200:
+    # Parse the JSON response
+    teams_data = response_teams.json()
+
+    # Assuming teams data is in the 'teams' key in the response
+    teams = teams_data.get('teams', [])
+
+    # Set of markets corresponding to NBA teams (U.S. and Canada)
+    nba_markets = {
+        "Atlanta", "Boston", "Brooklyn", "Charlotte", "Chicago",
+        "Cleveland", "Dallas", "Denver", "Detroit", "Golden State",
+        "Houston", "Indiana", "Los Angeles", "Memphis", "Miami",
+        "Milwaukee", "Minnesota", "New Orleans", "New York", 
+        "Oklahoma City", "Orlando", "Philadelphia", "Phoenix", 
+        "Portland", "Sacramento", "San Antonio", "Toronto", "Utah", "Washington"
+    }
+
+    # Filter teams to only keep NBA teams based on the market value
+    nba_teams = [team for team in teams if team.get('market') in nba_markets]
+
+    # Prepare data structure for saving
+    teams_info = {"teams": []}
+
+    for team in nba_teams:
+        team_info = {
+            "name": team["name"],
+            "market": team["market"],
+            "alias": team["alias"],
+            "additional_info": {}  # Placeholder for future performance stats
+        }
+        teams_info["teams"].append(team_info)
+
+    # Save the team data to a new JSON file in the data directory
+    with open(json_file_path, "w") as json_file:
+        json.dump(teams_info, json_file, indent=4)
+
+    print(f"Team data saved to '{json_file_path}'.")
+
+else:
+    print(f"Failed to fetch teams. Status code: {response_teams.status_code}")
