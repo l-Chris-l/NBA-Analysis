@@ -31,10 +31,12 @@ response_teams = requests.get(url_teams, headers=headers)
 # Check if the response was successful
 if response_teams.status_code == 200:
     # Parse the JSON response
-    teams_data = response_teams.json()
-
-    # Assuming teams data is in the 'teams' key in the response
-    teams = teams_data.get('teams', [])
+    try:
+        teams_data = response_teams.json()
+        teams = teams_data.get('teams', [])
+    except ValueError as e:
+        print(f"Error parsing JSON: {e}")
+        teams = []
 
     # Set of markets corresponding to NBA teams (U.S. and Canada)
     nba_markets = {
@@ -54,9 +56,10 @@ if response_teams.status_code == 200:
 
     for team in nba_teams:
         team_info = {
-            "name": team["name"],
-            "market": team["market"],
-            "alias": team["alias"],
+            "id": team.get("id", "Unknown"),  # Include the team ID
+            "name": team.get("name", "Unknown"),
+            "market": team.get("market", "Unknown"),
+            "alias": team.get("alias", "Unknown"),
             "additional_info": {}  # Placeholder for future performance stats
         }
         teams_info["teams"].append(team_info)
